@@ -1,3 +1,7 @@
+.slds-progress {
+    max-width: 100%;
+}
+
 .slds-progress__item.slds-is-completed .slds-progress__marker_icon {
     color: #a3bf53;
 }
