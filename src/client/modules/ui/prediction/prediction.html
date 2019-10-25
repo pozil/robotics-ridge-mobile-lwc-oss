@@ -1,0 +1,33 @@
+<template>
+    <p class="slds-m-top_x-small slds-text-align_left">
+        <strong>Prediction:</strong>
+    </p>
+
+    <template if:true={hasPredictions}>
+        <table class="slds-m-left_x-small">
+            <template for:each={probabilities} for:item="probability">
+                <tr key={probability.index}>
+                    <td>{probability.label}</td>
+                    <template if:true={hasBoundingBox}>
+                        <td>
+                            @({probability.boundingBox.centerX};
+                            {probability.boundingBox.centerY})
+                        </td>
+                    </template>
+                    <td>
+                        {probability.probability}%
+                    </td>
+                    <td>
+                        <ui-strength-icon
+                            value={probability.strength}
+                        ></ui-strength-icon>
+                    </td>
+                </tr>
+            </template>
+        </table>
+    </template>
+
+    <template if:false={hasPredictions}>
+        <p>No result</p>
+    </template>
+</template>

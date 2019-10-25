@@ -1,0 +1,12 @@
+.slds-progress__item.slds-is-completed .slds-progress__marker_icon {
+    color: #a3bf53;
+}
+
+.slds-progress__item.slds-is-completed .slds-progress__marker,
+.slds-progress__item.slds-is-active .slds-progress__marker {
+    border-color: #7ba501;
+}
+
+.slds-progress-bar__value {
+    background: #a3bf53;
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Robotics Ridge Mobile App",
+    "description": "Robotics Ridge Mobile App. Built on Lightning Web Components Open Source.",
+    "repository": "https://github.com/pozil/robotics-ridge-mobile-lwc-oss",
+    "logo": "https://lwc-recipes-oss.herokuapp.com/resources/images/logo.svg",
+    "keywords": [
+        "robotics",
+        "ridge",
+        "lightning",
+        "salesforce",
+        "web-components",
+        "open source"
+    ],
+    "env": {
+        "SF_LOGIN_URL": {
+            "description": "Salesforce authentication domain",
+            "value": "https://test.salesforce.com/",
+            "required": true
+        },
+        "SF_USERNAME": {
+            "description": "Salesforce username",
+            "value": "",
+            "required": true
+        },
+        "SF_PASSWORD": {
+            "description": "Salesforce password",
+            "value": "",
+            "required": true
+        },
+        "SF_TOKEN": {
+            "description": "Salesforce security token",
+            "value": "",
+            "required": true
+        }
+    },
+    "success_url": "/"
+}

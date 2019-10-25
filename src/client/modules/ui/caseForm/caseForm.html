@@ -1,0 +1,77 @@
+<template>
+    <div
+        class="slds-text-align_center slds-m-bottom_small slds-text-heading_medium"
+    >
+        New Case
+    </div>
+    <form class="slds-form">
+        <!-- Subject -->
+        <div class="slds-form-element slds-form-element_stacked">
+            <label class="slds-form-element__label" for="Subject"
+                >Subject</label
+            >
+            <div class="slds-form-element__control">
+                <input
+                    name="Subject"
+                    type="text"
+                    value={caseData.Subject}
+                    onchange={handleChange}
+                    id="Subject"
+                    class="slds-input"
+                />
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="slds-form-element slds-form-element_stacked">
+            <label class="slds-form-element__label" for="Description"
+                >Description</label
+            >
+            <div class="slds-form-element__control">
+                <textarea
+                    name="Description"
+                    onchange={handleChange}
+                    id="Description"
+                    class="slds-textarea"
+                >
+{caseData.Description}</textarea
+                >
+            </div>
+        </div>
+
+        <!-- Comments -->
+        <div class="slds-form-element slds-form-element_stacked">
+            <label class="slds-form-element__label" for="Comments"
+                >Comments</label
+            >
+            <div class="slds-form-element__control">
+                <textarea
+                    name="Comments"
+                    onchange={handleChange}
+                    id="Comments"
+                    class="slds-textarea"
+                >
+{caseData.Comments}</textarea
+                >
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="slds-align_absolute-center slds-m-top_large">
+            <button
+                type="button"
+                onclick={handleCancelClick}
+                class="slds-button slds-button_outline-brand slds-m-right_small"
+            >
+                Cancel
+            </button>
+            <button
+                type="submit"
+                onclick={handleSaveClick}
+                class="slds-button slds-button_brand slds-m-left_small"
+            >
+                Save
+            </button>
+        </div>
+    </form>
+</template>

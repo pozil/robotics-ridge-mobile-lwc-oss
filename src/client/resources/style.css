@@ -1,0 +1,40 @@
+/* Salesforce theme hack */
+.forceBrandBand::before, .forceBrandBand::after {
+    display: none;
+}
+
+/* App name */
+.slds-context-bar__app-name {
+    color: #709600;
+}
+
+/* Green spinner */
+.slds-spinner_brand.slds-spinner:before, .slds-spinner_brand.slds-spinner:after, .slds-spinner_brand .slds-spinner__dot-a:before, .slds-spinner_brand .slds-spinner__dot-b:before, .slds-spinner_brand .slds-spinner__dot-a:after, .slds-spinner_brand .slds-spinner__dot-b:after, .slds-spinner--brand.slds-spinner:before, .slds-spinner--brand.slds-spinner:after, .slds-spinner--brand .slds-spinner__dot-a:before, .slds-spinner--brand .slds-spinner__dot-b:before, .slds-spinner--brand .slds-spinner__dot-a:after, .slds-spinner--brand .slds-spinner__dot-b:after {
+    background-color: #7ba501;
+}
+
+/* Form */
+.slds-form-element__label {
+    color: #709600;
+}
+input, textarea {
+    color: #080707;
+}
+
+/* Button */
+.slds-button {
+    color: #709600;
+}
+.slds-button_outline-brand {
+    border-color: #7ba501;
+}
+.slds-button_brand {
+    color: #FFFFFF;
+    background-color: #709600;
+    border-color: #7ba501;
+}
+
+/* Success icon */
+.success svg {
+    fill:#04844b;
+}

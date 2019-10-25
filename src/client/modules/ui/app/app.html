@@ -1,0 +1,105 @@
+<template>
+    <div class="content">
+        <div class="header slds-theme_shade slds-media slds-media_center">
+            <div class="slds-media__figure">
+                <img
+                    src="/resources/robotAstroLineArt.png"
+                    alt="Robotics Ridge"
+                />
+            </div>
+            <div class="slds-media__body slds-p-horizontal_x-small">
+                ROBOTICS RIDGE
+            </div>
+        </div>
+
+        <template if:false={caseData}>
+            <!-- Transfer in progress -->
+            <template if:true={isLocked}>
+                <!-- Progress indicator -->
+                <div class="slds-p-around_large">
+                    <ui-progress-indicator
+                        steps={steps}
+                        active-step={currentStepName}
+                    ></ui-progress-indicator>
+                </div>
+                <!-- Spinner -->
+                <div
+                    role="status"
+                    class="slds-spinner slds-spinner_medium slds-spinner_brand"
+                >
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+                <!-- Device picture and prediction -->
+                <template if:true={devicePictureId}>
+                    <div
+                        class="slds-text-align_center slds-m-horizontal_x-small"
+                    >
+                        <img src={devicePictureUrl} width="300" />
+                        <template if:true={prediction}>
+                            <div class="prediction-container">
+                                <ui-prediction
+                                    prediction={prediction}
+                                ></ui-prediction>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </template>
+
+            <!-- Pickup form -->
+            <template if:false={isLocked}>
+                <div
+                    class="slds-text-align_center slds-p-around_large slds-m-around_xx-large"
+                >
+                    <button
+                        type="button"
+                        onclick={handlePickupClick}
+                        class="pickup slds-box slds-box_link slds-box_x-small slds-media"
+                    >
+                        <div
+                            class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small"
+                        >
+                            <span class="slds-icon_container">
+                                <svg
+                                    class="slds-icon slds-icon-text-default"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        xlink:href="/resources/dist/slds/icons/utility-sprite/svg/symbols.svg#play"
+                                    ></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div
+                            class="slds-media__body slds-border_left slds-p-around_small"
+                        >
+                            <h2
+                                class="slds-truncate slds-text-heading_small slds-text-align_left"
+                                title="Request Pickup"
+                            >
+                                Request Pickup
+                            </h2>
+                        </div>
+                    </button>
+                </div>
+            </template>
+        </template>
+
+        <!-- Case creation form -->
+        <template if:true={caseData}>
+            <div class="slds-m-around_small">
+                <ui-case-form
+                    case-data={caseData}
+                    onsave={handleCaseSave}
+                    oncancel={handleCaseCancel}
+                ></ui-case-form>
+            </div>
+        </template>
+    </div>
+
+    <div class={bgContainerClasses}>
+        <img src="/resources/trainLineArt.png" alt="Train art" />
+    </div>
+</template>

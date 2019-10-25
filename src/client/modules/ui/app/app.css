@@ -1,0 +1,64 @@
+.header img {
+    width: 60px;
+}
+
+.header {
+    font-weight: bold;
+    color: #7ba501;
+    font-size: 2em;
+    padding: 0.5rem;
+    border-bottom: 1px solid rgb(217, 219, 221);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+}
+
+.prediction-container {
+    width: 100%;
+}
+
+.content {
+    color: #7ba501;
+    position: absolute;
+    background-color: #ffffff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.bg-container {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    right: 0;
+    top: unset;
+    text-align: center;
+    z-index: 1;
+}
+
+button.pickup {
+    background-color: #7ba501;
+    color: #ffffff;
+    margin: auto;
+}
+
+button.pickup svg {
+    fill: #ffffff;
+}
+
+button.pickup .slds-border_left {
+    border-color: #ffffff;
+}
+
+button.pickup[disabled] {
+    background-color: #ecebea;
+    color: #706e6b;
+}
+
+button.pickup[disabled] svg {
+    fill: #706e6b;
+}
+
+button.pickup[disabled] .slds-border_left {
+    border-color: #706e6b;
+}
