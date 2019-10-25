@@ -198,7 +198,9 @@ export default class App extends LightningElement {
 
     // UI Expressions
     get bgContainerClasses() {
-        return this.devicePictureId ? 'bg-container' : 'slds-hide';
+        return this.devicePictureId || this.caseData
+            ? 'slds-hide'
+            : 'bg-container';
     }
 
     get devicePictureUrl() {
