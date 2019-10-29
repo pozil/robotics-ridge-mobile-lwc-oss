@@ -1,4 +1,4 @@
-# Robotics Ridge Mobile App
+# Sustainability and Robotics Mobile App
 
 This app is built on Lightning Web Components Open Source.
 
