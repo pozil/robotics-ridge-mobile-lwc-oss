@@ -8,6 +8,11 @@ const prediction_success = {
             probability: 0.99901164,
             label: 'Paper',
             boundingBox: { minY: 463, minX: 307, maxY: 626, maxX: 426 }
+        },
+        {
+            probability: 0.1000012,
+            label: 'plastic',
+            boundingBox: { minY: 200, minX: 100, maxY: 600, maxX: 200 }
         }
     ]
 };
@@ -36,7 +41,7 @@ describe('display-a-prediction', () => {
         document.body.appendChild(element);
 
         const paragraphs = element.shadowRoot.querySelectorAll('p');
-        expect(paragraphs.length).toBe(2);
+        expect(paragraphs[1].textContent).toBe('No result');
     });
 
     it('renders data with predictions and no bounding', () => {
@@ -58,8 +63,8 @@ describe('display-a-prediction', () => {
         element.prediction = prediction_success;
         document.body.appendChild(element);
         return Promise.resolve().then(() => {
-            const data = element.shadowRoot.querySelectorAll('td');
-            expect(data.length).toBe(4);
+            const rows = element.shadowRoot.querySelectorAll('tr');
+            expect(rows.length).toBe(prediction_success.probabilities.length);
         });
     });
 });
