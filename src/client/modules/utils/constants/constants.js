@@ -1,7 +1,7 @@
-const EVENT_MINDSTORM_PICKUP_REQUESTED = 'Mindstorm_Pickup_Requested';
-const EVENT_MINDSTORM_PAYLOAD_IDENTIFIED = 'Mindstorm_Payload_Identified';
-const EVENT_MINDSTORM_PAYLOAD_DELIVERED = 'Mindstorm_Payload_Delivered';
-const EVENT_MINDSTORM_PAYLOAD_MISSING = 'Mindstorm_Payload_Missing';
+const EVENT_ULTIMATE_PICKUP_REQUESTED = 'Ultimate_Pickup_Requested';
+const EVENT_ULTIMATE_PAYLOAD_IDENTIFIED = 'Ultimate_Payload_Identified';
+const EVENT_ULTIMATE_PAYLOAD_DELIVERED = 'Ultimate_Payload_Delivered';
+const EVENT_ULTIMATE_PAYLOAD_MISSING = 'Ultimate_Payload_Missing';
 
 const EVENT_ARM_PICKUP_REQUESTED = 'ARM_Pickup_Requested';
 const EVENT_ARM_PICKUP_CONFIRMED = 'ARM_Pickup_Confirmed';
@@ -15,16 +15,16 @@ const EVENT_TRAIN_RESET = 'Train_Reset';
 
 const STEPS = [
     {
-        label: 'Mindstorm Pickup Requested',
-        name: EVENT_MINDSTORM_PICKUP_REQUESTED
+        label: 'Ultimate Pickup Requested',
+        name: EVENT_ULTIMATE_PICKUP_REQUESTED
     },
     {
-        label: 'Mindstorm Payload Identified',
-        name: EVENT_MINDSTORM_PAYLOAD_IDENTIFIED
+        label: 'Ultimate Payload Identified',
+        name: EVENT_ULTIMATE_PAYLOAD_IDENTIFIED
     },
     {
-        label: 'Mindstorm Pickup Completed',
-        name: EVENT_MINDSTORM_PAYLOAD_DELIVERED
+        label: 'Ultimate Pickup Completed',
+        name: EVENT_ULTIMATE_PAYLOAD_DELIVERED
     },
     { label: 'Arm Pickup Requested', name: EVENT_ARM_PICKUP_REQUESTED },
     { label: 'Arm Pickup Confirmed', name: EVENT_ARM_PICKUP_CONFIRMED },
@@ -36,10 +36,10 @@ const STEPS = [
 
 export {
     STEPS,
-    EVENT_MINDSTORM_PICKUP_REQUESTED,
-    EVENT_MINDSTORM_PAYLOAD_IDENTIFIED,
-    EVENT_MINDSTORM_PAYLOAD_DELIVERED,
-    EVENT_MINDSTORM_PAYLOAD_MISSING,
+    EVENT_ULTIMATE_PICKUP_REQUESTED,
+    EVENT_ULTIMATE_PAYLOAD_IDENTIFIED,
+    EVENT_ULTIMATE_PAYLOAD_DELIVERED,
+    EVENT_ULTIMATE_PAYLOAD_MISSING,
     EVENT_ARM_PICKUP_REQUESTED,
     EVENT_ARM_PICKUP_REJECTED,
     EVENT_ARM_PICKUP_CONFIRMED,

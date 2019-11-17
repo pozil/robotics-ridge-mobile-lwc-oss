@@ -7,10 +7,10 @@ import { createCase } from 'services/case';
 import { WebSocketClient } from 'utils/webSocketClient';
 import {
     STEPS,
-    EVENT_MINDSTORM_PICKUP_REQUESTED,
-    EVENT_MINDSTORM_PAYLOAD_MISSING,
-    EVENT_MINDSTORM_PAYLOAD_IDENTIFIED,
-    EVENT_MINDSTORM_PAYLOAD_DELIVERED,
+    EVENT_ULTIMATE_PICKUP_REQUESTED,
+    EVENT_ULTIMATE_PAYLOAD_MISSING,
+    EVENT_ULTIMATE_PAYLOAD_IDENTIFIED,
+    EVENT_ULTIMATE_PAYLOAD_DELIVERED,
     EVENT_ARM_PICKUP_CONFIRMED,
     EVENT_ARM_PICKUP_COMPLETED,
     EVENT_TRAIN_RESET
@@ -43,7 +43,7 @@ export default class App extends LightningElement {
         });
 
         // Get initial device
-        getDeviceFromType('Mindstorm')
+        getDeviceFromType('Ultimate')
             .then(device => {
                 this.device = device;
                 this.feedId = device.Feed__c;
@@ -67,7 +67,7 @@ export default class App extends LightningElement {
         this.prediction = undefined;
         this.devicePictureId = undefined;
         // Archive events
-        if (eventData.Event__c === EVENT_MINDSTORM_PICKUP_REQUESTED) {
+        if (eventData.Event__c === EVENT_ULTIMATE_PICKUP_REQUESTED) {
             this.events = [];
         }
         this.events.push(eventData);
@@ -76,7 +76,7 @@ export default class App extends LightningElement {
         this.currentStepName = eventType;
 
         switch (eventType) {
-            case EVENT_MINDSTORM_PAYLOAD_MISSING:
+            case EVENT_ULTIMATE_PAYLOAD_MISSING:
                 // Close progress view in 1s
                 setTimeout(() => {
                     this.isLocked = false;
@@ -88,10 +88,10 @@ export default class App extends LightningElement {
                     };
                 }, 1000);
                 break;
-            case EVENT_MINDSTORM_PAYLOAD_IDENTIFIED:
+            case EVENT_ULTIMATE_PAYLOAD_IDENTIFIED:
                 this.displayDevicePicture(eventData);
                 break;
-            case EVENT_MINDSTORM_PAYLOAD_DELIVERED:
+            case EVENT_ULTIMATE_PAYLOAD_DELIVERED:
                 // Clear device picture in 1s
                 setTimeout(() => {
                     this.devicePictureId = undefined;
@@ -128,7 +128,7 @@ export default class App extends LightningElement {
         this.devicePictureId = undefined;
         // Publish PE
         const data = {
-            Event__c: EVENT_MINDSTORM_PICKUP_REQUESTED,
+            Event__c: EVENT_ULTIMATE_PICKUP_REQUESTED,
             Device_Id__c: this.device.Id,
             Feed_Id__c: this.device.Feed__c,
             Payload__c: this.payload
@@ -173,11 +173,11 @@ export default class App extends LightningElement {
 
         // Get requested and identified payload
         const payloadIdentifiedEvent = this.events.find(
-            e => e.Event__c === EVENT_MINDSTORM_PAYLOAD_IDENTIFIED
+            e => e.Event__c === EVENT_ULTIMATE_PAYLOAD_IDENTIFIED
         );
         if (payloadIdentifiedEvent === undefined) {
             console.warn(
-                `Couldn't find ${EVENT_MINDSTORM_PAYLOAD_IDENTIFIED} event in local cache`
+                `Couldn't find ${EVENT_ULTIMATE_PAYLOAD_IDENTIFIED} event in local cache`
             );
             return;
         }
